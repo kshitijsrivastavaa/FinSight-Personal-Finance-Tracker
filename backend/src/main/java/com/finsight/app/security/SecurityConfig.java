@@ -24,11 +24,11 @@ public class SecurityConfig {
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http
-                // ✅ Enable CORS with our configuration
+                // ✅ Enable CORS using config below
                 .cors(cors -> cors.configurationSource(corsConfigurationSource()))
-                // ✅ Disable CSRF for stateless APIs
+                // ✅ Disable CSRF for stateless REST APIs
                 .csrf(csrf -> csrf.disable())
-                // ✅ Use stateless sessions (JWT tokens)
+                // ✅ JWT = stateless sessions
                 .sessionManagement(session ->
                         session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 // ✅ Public vs protected endpoints
@@ -45,7 +45,7 @@ public class SecurityConfig {
                 // ✅ Add JWT filter
                 .addFilterBefore(jwtAuthenticationFilter, UsernamePasswordAuthenticationFilter.class);
 
-        // ✅ Allow H2 console in iframes
+        // ✅ Allow H2 console frames
         http.headers(headers -> headers.frameOptions(frame -> frame.disable()));
 
         return http.build();
@@ -56,16 +56,16 @@ public class SecurityConfig {
     public CorsConfigurationSource corsConfigurationSource() {
         CorsConfiguration config = new CorsConfiguration();
 
-        // Allow ALL origins (any device, any domain)
+        // For production demo, allow all origins
         config.addAllowedOriginPattern("*");
 
-        // Allow all standard HTTP methods
+        // Allow all basic HTTP methods
         config.setAllowedMethods(List.of("GET", "POST", "PUT", "DELETE", "OPTIONS"));
 
-        // Allow any header
+        // Allow any headers
         config.setAllowedHeaders(List.of("*"));
 
-        // Allow cookies / Authorization header
+        // Allow Authorization / cookies
         config.setAllowCredentials(true);
 
         UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
