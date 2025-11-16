@@ -24,14 +24,14 @@ public class SecurityConfig {
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http
-                // ✅ Enable CORS with our custom configuration
+                // ✅ Enable CORS with our configuration
                 .cors(cors -> cors.configurationSource(corsConfigurationSource()))
-                // ✅ Disable CSRF for stateless JWT API
+                // ✅ Disable CSRF for stateless APIs
                 .csrf(csrf -> csrf.disable())
-                // ✅ Stateless session (JWT)
+                // ✅ Use stateless sessions (JWT tokens)
                 .sessionManagement(session ->
                         session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
-                // ✅ Public endpoints
+                // ✅ Public vs protected endpoints
                 .authorizeHttpRequests(auth -> auth
                         .requestMatchers(
                                 "/api/auth/**",
@@ -40,36 +40,32 @@ public class SecurityConfig {
                                 "/swagger-ui/**",
                                 "/h2-console/**"
                         ).permitAll()
-                        // ✅ All other requests need authentication
                         .anyRequest().authenticated()
                 )
-                // ✅ Add JWT filter before username/password filter
+                // ✅ Add JWT filter
                 .addFilterBefore(jwtAuthenticationFilter, UsernamePasswordAuthenticationFilter.class);
 
-        // ✅ Allow H2 console frames
+        // ✅ Allow H2 console in iframes
         http.headers(headers -> headers.frameOptions(frame -> frame.disable()));
 
         return http.build();
     }
 
-    // ✅ CORS configuration so frontend (Vercel) can call backend
+    // ✅ CORS configuration — allow all origins (for demo/portfolio)
     @Bean
     public CorsConfigurationSource corsConfigurationSource() {
         CorsConfiguration config = new CorsConfiguration();
 
-        // Origins allowed to access this backend
-        config.setAllowedOrigins(List.of(
-                "http://localhost:5173",                     // local dev frontend
-                "https://finsight-frontend-bay.vercel.app"   // deployed frontend
-        ));
+        // Allow ALL origins (any device, any domain)
+        config.addAllowedOriginPattern("*");
 
-        // Allowed HTTP methods
+        // Allow all standard HTTP methods
         config.setAllowedMethods(List.of("GET", "POST", "PUT", "DELETE", "OPTIONS"));
 
-        // Allow any headers
+        // Allow any header
         config.setAllowedHeaders(List.of("*"));
 
-        // Allow credentials (Authorization: Bearer ...)
+        // Allow cookies / Authorization header
         config.setAllowCredentials(true);
 
         UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
