@@ -3,8 +3,8 @@ package com.finsight.app.security;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
-import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.config.http.SessionCreationPolicy;
+import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.web.cors.CorsConfigurationSource;
@@ -24,11 +24,11 @@ public class SecurityConfig {
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http
-                // ✅ Enable CORS using config below
+                // ✅ Enable CORS with our custom configuration
                 .cors(cors -> cors.configurationSource(corsConfigurationSource()))
-                // ✅ Disable CSRF for stateless REST APIs
+                // ✅ Disable CSRF because we use JWT (stateless)
                 .csrf(csrf -> csrf.disable())
-                // ✅ JWT = stateless sessions
+                // ✅ Use stateless sessions
                 .sessionManagement(session ->
                         session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 // ✅ Public vs protected endpoints
@@ -42,35 +42,32 @@ public class SecurityConfig {
                         ).permitAll()
                         .anyRequest().authenticated()
                 )
-                // ✅ Add JWT filter
+                // ✅ JWT filter before username/password filter
                 .addFilterBefore(jwtAuthenticationFilter, UsernamePasswordAuthenticationFilter.class);
 
-        // ✅ Allow H2 console frames
+        // ✅ Allow H2 console in frames
         http.headers(headers -> headers.frameOptions(frame -> frame.disable()));
 
         return http.build();
     }
 
-    // ✅ CORS configuration — allow all origins (for demo/portfolio)
+    // ✅ CORS configuration – allow your frontend and local dev
     @Bean
     public CorsConfigurationSource corsConfigurationSource() {
         CorsConfiguration config = new CorsConfiguration();
 
-        // For production demo, allow all origins
-        config.addAllowedOriginPattern("*");
+        // IMPORTANT: explicit origins when allowCredentials = true
+        config.setAllowedOrigins(List.of(
+                "https://finsight-frontend-bay.vercel.app",  // deployed frontend
+                "http://localhost:5173"                      // local dev
+        ));
 
-        // Allow all basic HTTP methods
         config.setAllowedMethods(List.of("GET", "POST", "PUT", "DELETE", "OPTIONS"));
-
-        // Allow any headers
         config.setAllowedHeaders(List.of("*"));
-
-        // Allow Authorization / cookies
         config.setAllowCredentials(true);
 
         UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
         source.registerCorsConfiguration("/**", config);
-
         return source;
     }
 }
