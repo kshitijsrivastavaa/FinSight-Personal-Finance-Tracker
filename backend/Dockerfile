@@ -1,8 +1,8 @@
 # ---- Build Stage ----
-FROM eclipse-temurin:17-jdk-alpine as build
+FROM maven:3.9.6-eclipse-temurin-17 as build
 WORKDIR /app
 COPY . .
-RUN ./mvnw -B package -DskipTests
+RUN mvn -B -DskipTests clean package
 
 # ---- Run Stage ----
 FROM eclipse-temurin:17-jdk-alpine
