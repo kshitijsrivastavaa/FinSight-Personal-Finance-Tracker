@@ -43,7 +43,7 @@ public class SecurityConfig {
                 )
                 .addFilterBefore(jwtAuthenticationFilter, UsernamePasswordAuthenticationFilter.class);
 
-        // allow H2 console (dev only)
+        // H2 console support (dev only)
         http.headers(headers -> headers.frameOptions(frame -> frame.disable()));
 
         return http.build();
@@ -53,15 +53,16 @@ public class SecurityConfig {
     public CorsConfigurationSource corsConfigurationSource() {
         CorsConfiguration config = new CorsConfiguration();
 
-        // Allow your frontend + local dev
-        config.setAllowedOriginPatterns(List.of(
-                "https://finsight-frontend-bay.vercel.app",
-                "http://localhost:5173",
-                "*"
+        // ✅ DO NOT USE "*" WHEN allowCredentials(true) IS ENABLED
+        config.setAllowedOrigins(List.of(
+                "https://finsight-frontend-bay.vercel.app",  // your Vercel frontend
+                "http://localhost:5173"                      // local dev
         ));
+
         config.setAllowedMethods(List.of("GET", "POST", "PUT", "DELETE", "OPTIONS"));
         config.setAllowedHeaders(List.of("Authorization", "Content-Type", "Accept", "Origin"));
         config.setAllowCredentials(true);
+        config.setMaxAge(3600L);
 
         UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
         source.registerCorsConfiguration("/**", config);
