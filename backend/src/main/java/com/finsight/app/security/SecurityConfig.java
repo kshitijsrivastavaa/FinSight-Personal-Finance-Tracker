@@ -53,10 +53,11 @@ public class SecurityConfig {
     public CorsConfigurationSource corsConfigurationSource() {
         CorsConfiguration config = new CorsConfiguration();
 
-        // ✅ DO NOT USE "*" WHEN allowCredentials(true) IS ENABLED
+        // ✅ ALL frontend origins that are allowed to call this backend
         config.setAllowedOrigins(List.of(
-                "https://finsight-frontend-bay.vercel.app",  // your Vercel frontend
-                "http://localhost:5173"                      // local dev
+                "https://finsight-frontend-bay.vercel.app",               // old frontend
+                "https://fin-sight-personal-finance-tracker.vercel.app",  // new frontend
+                "http://localhost:5173"                                    // local dev
         ));
 
         config.setAllowedMethods(List.of("GET", "POST", "PUT", "DELETE", "OPTIONS"));
