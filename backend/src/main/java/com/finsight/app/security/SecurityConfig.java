@@ -18,9 +18,9 @@ public class SecurityConfig {
         http
                 // Use our CORS configuration
                 .cors(cors -> cors.configurationSource(corsConfigurationSource()))
-                // No CSRF (stateless API)
+                // Disable CSRF for stateless API
                 .csrf(csrf -> csrf.disable())
-                // 🔓 Make ALL endpoints public – no auth, no JWT, nothing
+                // 🔓 Allow everything (no auth for now)
                 .authorizeHttpRequests(auth -> auth
                         .anyRequest().permitAll()
                 );
@@ -32,14 +32,14 @@ public class SecurityConfig {
     public CorsConfigurationSource corsConfigurationSource() {
         CorsConfiguration config = new CorsConfiguration();
 
-        // 🔓 Allow EVERYTHING for this portfolio API
-        config.setAllowedOrigins(List.of("*"));           // any origin
-        config.setAllowedMethods(List.of("*"));           // any method (GET, POST, etc.)
-        config.setAllowedHeaders(List.of("*"));           // any header
-        config.setAllowCredentials(false);                // no cookies needed
+        // 🔓 Completely open CORS for this portfolio project
+        config.setAllowedOrigins(List.of("*"));   // any origin
+        config.setAllowedMethods(List.of("*"));   // GET, POST, PUT, DELETE, OPTIONS...
+        config.setAllowedHeaders(List.of("*"));   // any header
+        config.setAllowCredentials(false);        // we don't use cookies
 
         UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
-        source.registerCorsConfiguration("/**", config);  // apply to all paths
+        source.registerCorsConfiguration("/**", config);   // apply to all endpoints
         return source;
     }
 }
