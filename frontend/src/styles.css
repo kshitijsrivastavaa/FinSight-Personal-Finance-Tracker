@@ -1,0 +1,100 @@
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  background: #0f172a;
+  color: #e5e7eb;
+}
+
+.auth-container, .dashboard {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.auth-container h1 {
+  font-size: 2.5rem;
+}
+
+.auth-forms {
+  display: flex;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.card {
+  background: #020617;
+  border-radius: 1rem;
+  padding: 1.5rem;
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.9);
+}
+
+input, select, button {
+  padding: 0.5rem 0.75rem;
+  border-radius: 0.5rem;
+  border: 1px solid #1e293b;
+  background: #020617;
+  color: #e5e7eb;
+  margin-bottom: 0.75rem;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: linear-gradient(to right, #22c55e, #0ea5e9);
+  color: white;
+  font-weight: 600;
+}
+
+button:hover {
+  opacity: 0.9;
+}
+
+.auth-forms input, .auth-forms button {
+  width: 100%;
+}
+
+.dashboard header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.summary-section {
+  display: flex;
+  gap: 1rem;
+  margin: 1.5rem 0;
+}
+
+.summary-section .card {
+  flex: 1;
+  text-align: center;
+}
+
+.main-section {
+  display: grid;
+  grid-template-columns: 2fr 1.5fr;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.5rem;
+}
+
+.form-grid input:nth-child(5),
+.form-grid button {
+  grid-column: span 3;
+}
+
+.transactions-section table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+}
+
+.transactions-section th, .transactions-section td {
+  border-bottom: 1px solid #1e293b;
+  padding: 0.5rem;
+}
