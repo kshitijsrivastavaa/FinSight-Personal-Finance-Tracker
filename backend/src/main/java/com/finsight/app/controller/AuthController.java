@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.Map;
 import java.util.Optional;
 
-@CrossOrigin(origins = "*")   // 👈 This fixes the CORS block
+@CrossOrigin(origins = "*")   // 👈 allow requests from any frontend
 @RestController
 @RequestMapping("/api/auth")
 public class AuthController {
@@ -25,7 +25,6 @@ public class AuthController {
         this.jwtUtil = jwtUtil;
     }
 
-    // ----------- DTOs -----------
     public static class RegisterRequest {
         @NotBlank
         public String name;
@@ -42,13 +41,10 @@ public class AuthController {
         public String password;
     }
 
-    // ----------- ENDPOINTS -----------
-
     @PostMapping("/register")
     public ResponseEntity<?> register(@RequestBody RegisterRequest request) {
         User user = userService.register(request.name, request.email, request.password);
         String token = jwtUtil.generateToken(user.getEmail(), Map.of("userId", user.getId()));
-
         return ResponseEntity.ok(Map.of(
                 "token", token,
                 "user", Map.of(
@@ -62,14 +58,11 @@ public class AuthController {
     @PostMapping("/login")
     public ResponseEntity<?> login(@RequestBody LoginRequest request) {
         Optional<User> userOpt = userService.login(request.email, request.password);
-
         if (userOpt.isEmpty()) {
             return ResponseEntity.status(401).body(Map.of("error", "Invalid credentials"));
         }
-
         User user = userOpt.get();
         String token = jwtUtil.generateToken(user.getEmail(), Map.of("userId", user.getId()));
-
         return ResponseEntity.ok(Map.of(
                 "token", token,
                 "user", Map.of(
