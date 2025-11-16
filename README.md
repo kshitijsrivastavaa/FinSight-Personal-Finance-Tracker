@@ -51,8 +51,10 @@ A modern full-stack finance management application built with
 
 ## 🚀 Live Demo
 
-🌐 **Frontend:** _Coming after deployment_  
-🛠 **Backend Swagger UI:** _Coming after deployment_
+🔗 Frontend: https://finsight-frontend-2xkuf043o.vercel.app  
+🔗 Backend API: https://finsight-backend-qiwc.onrender.com  
+📄 API Docs (Swagger): https://finsight-backend-qiwc.onrender.com/swagger-ui/index.html
+
 
 ---
 
