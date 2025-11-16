@@ -1,89 +1,90 @@
-<p align="center">
-  <img src="https://img.shields.io/badge/FinSight-Expense%20Analytics-1E88E5?style=for-the-badge&logo=google-analytics&logoColor=white" />
-</p>
+<div align="center">
 
-<h1 align="center">💰 FinSight — Smart Personal Finance & Analytics App</h1>
+<img src="https://img.shields.io/badge/FinSight-Your%20Money%20Matters-2E86DE?style=for-the-badge&logo=google-wallet&logoColor=white" />
 
-<p align="center">
-A modern expense tracking & financial insights platform built with <strong>React + Vite, Spring Boot, JWT Auth, PostgreSQL & Cloud Deployment</strong>.
-</p>
+# 💰 **FinSight — Smart Personal Finance Tracker**
 
-<p align="center">Track. Analyze. Improve. Own Your Money. 📈</p>
+### _Track. Analyze. Improve. Take control of your financial life._
 
 ---
 
-<p align="center">
-<a href="https://fin-sight-personal-finance-tracker.vercel.app" target="_blank">
-<img src="https://img.shields.io/badge/🚀 Live Demo-00C853?style=for-the-badge&logo=vercel&logoColor=white" />
+🟢 **LIVE APP:**  
+🔗 https://fin-sight-personal-finance-tracker.vercel.app  
+
+📌 **Backend API:**  
+🔗 https://finsight-backend-qiwc.onrender.com  
+
+📘 **API Docs (Swagger):**  
+🔗 https://finsight-backend-qiwc.onrender.com/swagger-ui/index.html  
+
+---
+
+<a href="https://github.com/kshitijsrivastavaa">
+<img src="https://img.shields.io/badge/Made%20With%20💙%20By-Kshitij%20Srivastava-blue?style=for-the-badge" />
 </a>
-</p>
 
-<p align="center">
-<a href="https://fin-sight-personal-finance-tracker.vercel.app">🌐 Frontend</a> • 
-<a href="https://finsight-backend-qiwc.onrender.com">🔌 Backend API</a> •
-<a href="https://finsight-backend-qiwc.onrender.com/swagger-ui/index.html">📘 Swagger Docs</a>
-</p>
+</div>
 
 ---
 
-## 📚 Table of Contents
+## 🧩 What is FinSight?
 
-- ⭐ Overview  
-- 🛠 Tech Stack  
-- ✨ Features  
-- 📦 Deployment Links  
-- 🧪 Local Setup  
-- 📁 Folder Structure  
-- 🧩 Future Enhancements  
-- 👤 Author  
+FinSight is a modern **personal financial analytics system** that allows users to securely track income, expenses, and visualize spending behavior through **interactive analytics**.
+
+> Designed for real-world usage, not just a demo — fully deployable, secure, scalable & cloud-ready.
 
 ---
 
-## ⭐ Overview
-
-FinSight helps users track personal expenses, categorize transactions, analyze trends, and make smarter financial decisions using visual insights. Designed with a clean UI and secure user auth, it runs fully in the cloud.
-
----
-
-## 🛠 Tech Stack
+## 🛠 **Tech Stack**
 
 | Layer | Technology |
 |------|------------|
-| Frontend | React + Vite + TypeScript + Tailwind |
-| Backend | Spring Boot 3 + Java 17 + Spring Security |
-| Database | PostgreSQL (Render) + H2 (Dev) |
-| Authentication | JWT Bearer Token |
-| Deployment | Vercel + Render |
-| Monitoring & Docs | Swagger UI |
+| 🎨 Frontend | React + Vite + TypeScript + TailwindCSS |
+| ⚙ Backend | Spring Boot 3 + Java 17 + Spring Security |
+| 🗄 Database | PostgreSQL (Production) & H2 (Dev Mode) |
+| 🔐 Authentication | JWT Bearer Token Auth |
+| 🚀 Deployment | Vercel + Render |
+| 🧪 Tools | Swagger UI, Maven, Postman |
 
 ---
 
-## ✨ Core Features
+## ✨ **Key Features**
 
-✔ Secure Login/Register (JWT Auth)  
-✔ Add / Edit / Delete Expenses & Income  
-✔ Category-wise analytics with pie chart  
-✔ Savings & budget insights  
-✔ Cloud persistent storage  
-✔ Role-based request access  
-✔ Fully mobile responsive  
-
----
-
-## 📦 Live Deployment
-
-| Service | Status | URL |
-|---------|--------|-----|
-| 🖥️ Frontend | ✅ Running | https://fin-sight-personal-finance-tracker.vercel.app |
-| ⚙ Backend API | ✅ Running | https://finsight-backend-qiwc.onrender.com |
-| 📘 Swagger Docs | 🧪 Active | https://finsight-backend-qiwc.onrender.com/swagger-ui/index.html |
+| Category | Features |
+|---------|----------|
+| 🔐 Authentication | Secure Login/Register using JWT |
+| 💸 Expense Tracking | Add, View, Delete, Categorize Income & Expenses |
+| 📊 Finance Analytics | Pie charts, category summaries, insights |
+| 💾 Persistent Storage | Secure data stored in PostgreSQL |
+| 📱 UI Experience | Fully responsive, clean UX, dashboard styled |
+| ☁ Deployment Ready | Dockerized backend, CI/CD friendly |
 
 ---
 
-## 🧪 Run Locally
+## 🖼 Preview Screens (Coming)
 
-> Clone repo 👇
+| Login Page | Dashboard | Analytics View |
+|-----------|-----------|----------------|
+| 🧪 Coming | 🧪 Coming | 🧪 Coming |
 
-```sh
+> _Preview screenshots will be added soon after UI polish._
+
+---
+
+## 📦 Deployment Links
+
+| Component | Status | URL |
+|----------|--------|-----|
+| 🖥 Frontend | 🟢 Live | https://fin-sight-personal-finance-tracker.vercel.app |
+| 🔌 Backend | 🟢 Live | https://finsight-backend-qiwc.onrender.com |
+| 📘 API Docs | 🟢 Live | https://finsight-backend-qiwc.onrender.com/swagger-ui/index.html |
+
+---
+
+## 🧪 Run Locally (Development Setup)
+
+> Clone the repo:
+
+```bash
 git clone https://github.com/kshitijsrivastavaa/FinSight-Personal-Finance-Tracker.git
 cd FinSight-Personal-Finance-Tracker
