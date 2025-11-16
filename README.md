@@ -1,85 +1,80 @@
 <p align="center">
-  <img src="https://img.shields.io/badge/FinSight-Personal%20Finance%20Tracker-4c8bd6?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/FinSight-Personal%20Finance%20Tracker-4c8bd6?style=for-the-badge&logo=react&logoColor=white" />
 </p>
 
 <h1 align="center">💰 FinSight — Personal Finance & Expense Analytics</h1>
 
+<p align="center">A modern, smart personal finance manager built using Spring Boot, React + Vite, PostgreSQL, and JWT Authentication — designed to help users track spending, manage budgets, and understand financial habits with beautiful analytics.</p>
+
+---
+
 <p align="center">
-A modern full-stack finance management application built with 
-<strong>Spring Boot</strong>, <strong>React + Vite + TypeScript</strong>, 
-<strong>JWT Authentication</strong>, and a clean <strong>Analytics Dashboard</strong>.
+  <a href="https://finsight-frontend-2xkuf043o.vercel.app" target="_blank">
+    <img src="https://img.shields.io/badge/🚀 LAUNCH APP-00CC99?style=for-the-badge" />
+  </a>
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/github/languages/top/kshitijsrivastavaa/FinSight-Personal-Finance-Tracker?style=flat-square" />
-  <img src="https://img.shields.io/github/last-commit/kshitijsrivastavaa/FinSight-Personal-Finance-Tracker?style=flat-square" />
-  <img src="https://img.shields.io/badge/status-active-success?style=flat-square" />
+  <a href="https://finsight-frontend-2xkuf043o.vercel.app">🔗 Frontend</a> |
+  <a href="https://finsight-backend-qiwc.onrender.com">🖥️ Backend</a> |
+  <a href="https://finsight-backend-qiwc.onrender.com/swagger-ui/index.html">📘 Swagger Docs</a>
 </p>
 
 ---
 
-## 🚀 Live Demo
+## 🛠️ Tech Stack
 
-🔗 **Frontend App:**  
-https://finsight-frontend-2xkuf043o.vercel.app  
-
-⚙ **Backend API Base:**  
-https://finsight-backend-qiwc.onrender.com  
-
-📄 **Swagger API Docs:**  
-https://finsight-backend-qiwc.onrender.com/swagger-ui/index.html  
-
----
-
-## 🔥 Features
-
-- 🔐 **JWT-based Authentication** – Secure login & registration.
-- 👤 **Multi-User Support** – Each user sees only their own data.
-- 💰 **Track Income & Expenses** – Add, view, and delete transactions.
-- 🗂 **Spending Categories** – Food, Rent, Travel, Shopping, Bills, Others.
-- 📊 **Analytics Dashboard** – Visualize spending with interactive charts (Recharts).
-- 🧮 **Financial Summary** – Total income, total expense, net savings.
-- 🧾 **Transaction History** – Full table view with delete actions.
-- 💾 **Persistent Session** – JWT token stored in localStorage.
-- 🌐 **Fully Deployed** – Backend on Render, Frontend on Vercel.
-- 🛠 **RESTful APIs** – Well-structured backend with Swagger documentation.
-- 🐳 **Docker Ready** – Backend containerized with Dockerfile.
+| Component | Technology |
+|----------|------------|
+| Frontend | React + Vite + TypeScript + TailwindCSS |
+| Backend | Java 17 + Spring Boot 3 + Spring Security |
+| Database | H2 (Dev), PostgreSQL / Render (Prod) |
+| Authentication | JWT Token-Based Auth |
+| Deployment | Vercel (Frontend) & Render (Backend) |
+| Dev Tools | Maven, Swagger UI, Postman |
 
 ---
 
-## 🏗 Tech Stack
+## ✨ Features
 
-| Layer      | Technology                                  |
-|-----------|----------------------------------------------|
-| Frontend  | React, Vite, TypeScript, Recharts           |
-| Styling   | CSS (custom styles, dashboard layout)       |
-| Backend   | Spring Boot 3, Java 17, Maven               |
-| Auth      | JWT, Spring Security                        |
-| Database  | H2 (in-memory for dev)                      |
-| API Docs  | Swagger / OpenAPI                          |
-| Deployment| Render (Backend), Vercel (Frontend), Docker |
+- 🔐 JWT Authentication & Session Management  
+- 👤 Multi-user secure accounts  
+- 🧾 Add, view, edit, and delete expenses & income  
+- 🗂 Categorization with visual reports  
+- 📊 Analytics Dashboard (Pie charts + breakdowns)  
+- 🧮 Budget summary with net savings calculation  
+- 📁 Persistent database storage  
+- ☁ Deploy-ready Docker & CI/CD support  
+
+---
+
+## 📷 UI Preview
+
+| Login Page | Dashboard | Analytics |
+|------------|-----------|-----------|
+| *(Coming Soon)* | *(Coming Soon)* | *(Coming Soon)* |
+
+> Screenshots will be added in future updates.
 
 ---
 
-## 🧱 Architecture Overview
+## 🚀 Deployment Links
 
-**Frontend (Vercel)**  
-- Built with React + Vite + TypeScript.  
-- Talks to backend via `fetch` using `API_BASE = https://finsight-backend-qiwc.onrender.com/api`.  
-- Handles:
-  - Authentication (register, login)
-  - State management using React hooks
-  - Dashboard UI, charts, and tables
-
-**Backend (Render)**  
-- Spring Boot application exposing `/api/...` routes.
-- Handles:
-  - User registration & login (JWT)
-  - Transactions CRUD
-  - Analytics: summary & spending by category
-- Swagger UI for testing and documentation.
+| Component | Status | Link |
+|----------|--------|------|
+| Frontend | ✔ Live | https://finsight-frontend-2xkuf043o.vercel.app |
+| Backend API | ✔ Live | https://finsight-backend-qiwc.onrender.com |
+| Swagger API Docs | ✔ Live | https://finsight-backend-qiwc.onrender.com/swagger-ui/index.html |
 
 ---
+
+## 🧪 Local Setup
+
+### Backend
+
+```sh
+cd backend
+mvn spring-boot:run
 
 ## 📁 Project Structure
 
