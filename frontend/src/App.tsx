@@ -27,7 +27,7 @@ type AuthResponse = {
   user: User;
 };
 
-const API_BASE = 'http://localhost:8080/api';
+const API_BASE = 'https://finsight-backend-qiwc.onrender.com/api';
 
 const App: React.FC = () => {
   const [user, setUser] = useState<User | null>(null);
