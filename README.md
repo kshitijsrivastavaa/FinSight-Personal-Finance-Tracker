@@ -101,4 +101,30 @@ It feels like a **real SaaS dashboard** — responsive, clean, and portfolio-gra
 ---
 
 ## 🧱 System Architecture
+ ------------------------------
+|            Frontend          |
+| React + Vite + TypeScript    |
+| - Auth UI                    |
+| - Dashboard                  |
+| - Charts & Table             |
+ ------------------------------
+              |
+              v
+ ------------------------------
+|            Backend           |
+| Spring Boot + JWT           |
+| - Auth APIs                 |
+| - Transaction APIs          |
+| - Analytics APIs            |
+ ------------------------------
+              |
+              v
+ ------------------------------
+|            Database          |
+| PostgreSQL (Prod) / H2 Dev  |
+| - Users                     |
+| - Transactions              |
+| - Auth Mapping              |
+ ------------------------------
+
 
