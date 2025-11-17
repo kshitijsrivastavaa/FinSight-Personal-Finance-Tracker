@@ -1,4 +1,4 @@
-> ⚠️ **Note:** On first signup or login, it may take a few seconds because the backend server auto-wakes from sleep mode. Please wait — the app will load shortly. 🚀
+> ⚠️ **Note:** On first signup/login, the backend may take a few seconds to wake up (Render free hosting cooldown). Please wait — the app will load automatically. 🚀
 
 <div align="center">
 
@@ -8,67 +8,98 @@
 
 **Track. Analyze. Grow.**
 
-FinSight is not just an expense tracker — it's a **financial command center** with secure authentication, realtime analytics, and a modern dashboard UI built for performance and clarity.
+FinSight is not just an expense tracker — it's your **financial command center**, built with enterprise-grade architecture, real-time analytics, secure authentication, and a polished dashboard UI.
 
 </div>
 
 ---
 
-## 🌍 Live Links
+## 🚀 Live Links
 
 <div align="center">
 
-🔗 **Live App:** https://fin-sight-personal-finance-tracker.vercel.app  
+🔗 **Frontend Live App:** https://fin-sight-personal-finance-tracker.vercel.app  
 🧪 **Backend API:** https://finsight-backend-qiwc.onrender.com  
-📘 **Swagger Docs:** https://finsight-backend-qiwc.onrender.com/swagger-ui/index.html  
+📘 **Swagger Documentation:** https://finsight-backend-qiwc.onrender.com/swagger-ui/index.html  
 
 </div>
 
 ---
 
-## 🧩 Overview
+## ✨ What is FinSight?
 
-FinSight turns raw financial activity into a visually clear, analytical dashboard. Users can manage income, monitor expenses, visualize spending trends, and stay financially aware — all in a secure, multi-user environment.
+FinSight is a secure, modern, multi-user personal finance tracker designed to help users:
 
----
+- Add and manage income & expenses  
+- Analyze their spending through analytics & charts  
+- Monitor total income, expenses, and net savings  
+- Track spending patterns across categories  
+- View, search, filter, and delete transactions seamlessly  
 
-### 🏆 Core Highlights
-
-| Feature | Status |
-|--------|--------|
-| 🔐 JWT Authentication | ✔️ |
-| 📊 Real-time Financial Analytics | ✔️ |
-| 💸 Income & Expense CRUD | ✔️ |
-| 🧾 Transaction Filtering | ✔️ |
-| 👥 Multi-User Data Isolation | ✔️ |
-| 📜 Swagger Documentation | ✔️ |
-| 🐳 Docker Support | ✔️ |
+The UI is designed to feel like a **clean, professional SaaS finance dashboard.**
 
 ---
 
-## 🖼 Product Showcase
+## 🖼 UI Preview
 
-| Login / Signup | Dashboard |
+| Authentication | Dashboard |
 |---------------|-----------|
 | ![](assets/finsight-auth.png) | ![](assets/finsight-dashboard-summary.png) |
 
-| Analytics & Charts | Transaction Management |
-|---------------|-----------|
-| ![](assets/finsight-analytics-chart.png) | ![](assets/finsight-transactions-table.png) |
+| Transactions Table | Analytics |
+|--------------------|-----------|
+| ![](assets/finsight-transactions-table.png) | ![](assets/finsight-analytics-chart.png) |
 
 ---
 
 ## 🛠 Tech Stack
 
-| Layer | Technologies |
-|-------|-------------|
-| **Frontend** | React ⚛ · Vite ⚡ · TypeScript 🧠 · Recharts 📊 · Custom CSS 🎨 |
-| **Backend** | Java 17 · Spring Boot · Spring Security · JWT Auth |
-| **Database** | H2 (Dev) · PostgreSQL (Prod) |
-| **Infrastructure** | Docker 🐳 · Render (API) ☁ · Vercel (Frontend) 🚀 |
-| **API Docs** | Swagger / OpenAPI |
+### Frontend
+- ⚛ React + Vite  
+- 📘 TypeScript  
+- 🎨 Custom Dashboard UI  
+- 📊 Recharts  
+
+### Backend
+- ☕ Java 17  
+- 🌱 Spring Boot 3  
+- 🔐 Spring Security + JWT  
+- 🧾 Swagger / OpenAPI Docs  
+
+### Infrastructure
+- 🗄 H2 Database (Dev)  
+- 🐘 PostgreSQL (Production Ready)  
+- 🐳 Docker Support  
+- ☁ Render + Vercel Deployments  
 
 ---
 
-## 🧠 System Architecture
+## 💡 Core Features
+
+### 🔐 Authentication & Security
+- JWT Token-based secure login & registration  
+- Hashed passwords  
+- Protected API routing  
+- Token stored safely in browser storage  
+
+### 💸 Transaction Management
+- Add income or expense  
+- Choose category, amount, description & date  
+- View entries in a sortable responsive table  
+- Delete transactions anytime  
+
+### 📈 Analytics Dashboard
+Real-time financial insights including:
+
+- Total Income  
+- Total Expenses  
+- Net Savings  
+- Category-wise spending pie chart  
+
+### 👥 Multi-User Isolation
+Each user’s data is **fully isolated** via JWT identity.
+
+---
+
+## 🧱 High-Level Architecture
 
