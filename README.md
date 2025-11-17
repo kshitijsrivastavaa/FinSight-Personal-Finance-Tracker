@@ -1,105 +1,104 @@
-> ⚠️ **Note:** On first signup/login, the backend may take a few seconds to wake up (Render free hosting cooldown). Please wait — the app will load automatically. 🚀
+> ⚠️ **Important:** When signing up or logging in for the first time, please wait a few seconds — the backend server wakes from sleep mode. Once active, the app runs smoothly. 🚀
 
-<div align="center">
+<p align="center">
+  <img src="https://img.shields.io/badge/FinSight-Personal%20Finance%20Tracker-4c8bd6?style=for-the-badge&logo=react&logoColor=white" />
+</p>
 
-<img src="https://img.shields.io/badge/FinSight-Next%20Gen%20Finance%20Tracker-2ECC71?style=for-the-badge&logo=react&logoColor=white"/>
+<h1 align="center">💰 FinSight — Personal Finance & Expense Intelligence Platform</h1>
 
-# 💰 FinSight — Smart Personal Finance & Expense Intelligence
+<p align="center">
+  A fully production-style finance management system built with 
+  <b>Spring Boot</b>, <b>React + Vite</b>, <b>TypeScript</b>, <b>JWT Authentication</b>, and a smooth analytics dashboard.
+</p>
 
-**Track. Analyze. Grow.**
+<p align="center">
+  <a href="https://fin-sight-personal-finance-tracker.vercel.app" target="_blank">
+    <img src="https://img.shields.io/badge/🚀 LIVE DEMO-00CC99?style=for-the-badge" />
+  </a>
+</p>
 
-FinSight is not just an expense tracker — it's your **financial command center**, built with enterprise-grade architecture, real-time analytics, secure authentication, and a polished dashboard UI.
-
-</div>
-
----
-
-## 🚀 Live Links
-
-<div align="center">
-
-🔗 **Frontend Live App:** https://fin-sight-personal-finance-tracker.vercel.app  
-🧪 **Backend API:** https://finsight-backend-qiwc.onrender.com  
-📘 **Swagger Documentation:** https://finsight-backend-qiwc.onrender.com/swagger-ui/index.html  
-
-</div>
-
----
-
-## ✨ What is FinSight?
-
-FinSight is a secure, modern, multi-user personal finance tracker designed to help users:
-
-- Add and manage income & expenses  
-- Analyze their spending through analytics & charts  
-- Monitor total income, expenses, and net savings  
-- Track spending patterns across categories  
-- View, search, filter, and delete transactions seamlessly  
-
-The UI is designed to feel like a **clean, professional SaaS finance dashboard.**
+<p align="center">
+  <a href="https://fin-sight-personal-finance-tracker.vercel.app">🌐 Frontend</a> •
+  <a href="https://finsight-backend-qiwc.onrender.com">🖥 Backend API</a> •
+  <a href="https://finsight-backend-qiwc.onrender.com/swagger-ui/index.html">📘 Swagger Docs</a>
+</p>
 
 ---
 
-## 🖼 UI Preview
+## ✨ Overview
+
+FinSight is a **secure, modern personal finance platform** designed to help users:
+
+- Track income & expenses  
+- Visualize financial activity with charts & insights  
+- Maintain user-specific transaction history
+- Monitor savings & spending trends  
+- Access data securely with JWT authentication  
+
+It feels like a **real SaaS dashboard** — responsive, clean, and portfolio-grade.
+
+---
+
+## 🖼 Preview Screenshots
 
 | Authentication | Dashboard |
 |---------------|-----------|
-| ![](assets/finsight-auth.png) | ![](assets/finsight-dashboard-summary.png) |
+| ![Auth](assets/finsight-auth.png) | ![Dashboard](assets/finsight-dashboard-summary.png) |
 
-| Transactions Table | Analytics |
-|--------------------|-----------|
-| ![](assets/finsight-transactions-table.png) | ![](assets/finsight-analytics-chart.png) |
+| Transactions | Analytics |
+|-------------|-----------|
+| ![Table](assets/finsight-transactions-table.png) | ![Chart](assets/finsight-analytics-chart.png) |
 
 ---
 
-## 🛠 Tech Stack
+## 🛠 Tech Stack Breakdown
 
-### Frontend
-- ⚛ React + Vite  
+### **Frontend**
+- ⚛ React (Vite)
 - 📘 TypeScript  
-- 🎨 Custom Dashboard UI  
-- 📊 Recharts  
+- 🎨 Custom UI Styling (dark dashboard look)
+- 📊 Recharts for analytics visualization  
 
-### Backend
-- ☕ Java 17  
-- 🌱 Spring Boot 3  
+### **Backend**
+- ☕ Spring Boot 3  
 - 🔐 Spring Security + JWT  
-- 🧾 Swagger / OpenAPI Docs  
+- 🧰 Maven  
 
-### Infrastructure
-- 🗄 H2 Database (Dev)  
-- 🐘 PostgreSQL (Production Ready)  
-- 🐳 Docker Support  
-- ☁ Render + Vercel Deployments  
+### **Database & Deployment**
+- 🗄 H2 (local development)
+- 🐘 PostgreSQL (production-ready)
+- 🐳 Docker support
+- ☁ Deployments using **Render** + **Vercel**
+- 📜 Swagger/OpenAPI documentation available
 
 ---
 
 ## 💡 Core Features
 
 ### 🔐 Authentication & Security
-- JWT Token-based secure login & registration  
-- Hashed passwords  
-- Protected API routing  
-- Token stored safely in browser storage  
+- Account creation + login  
+- Secure password hashing  
+- JWT-based protected API access  
+- LocalStorage token handling on frontend  
 
-### 💸 Transaction Management
-- Add income or expense  
-- Choose category, amount, description & date  
-- View entries in a sortable responsive table  
-- Delete transactions anytime  
+### 📊 Dashboard Analytics
+- Total income summary
+- Total expenses summary
+- Net savings indicator
+- Automatic live updates on changes  
+- Spending categorization & visualization via pie chart  
 
-### 📈 Analytics Dashboard
-Real-time financial insights including:
-
-- Total Income  
-- Total Expenses  
-- Net Savings  
-- Category-wise spending pie chart  
+### 💸 Transaction Handling
+- Add income/expense entries  
+- Filterable and responsive transaction table  
+- Category, date, amount, and type-based structure  
+- Delete transaction option  
 
 ### 👥 Multi-User Isolation
-Each user’s data is **fully isolated** via JWT identity.
+- Users see **only their data**
+- Backend filters by authenticated user ID from JWT
 
 ---
 
-## 🧱 High-Level Architecture
+## 🧱 System Architecture
 
